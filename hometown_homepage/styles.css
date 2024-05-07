@@ -1,0 +1,148 @@
+/*
+1) Rever conteúdo é sempre bom. O do card me salvou porque eu esqueci da parte do "DIV" para poder justificar os itens da forma correta, e a mesma coisa para as "custom fonts"...
+References that helped me:
+- https://scrimba.com/scrim/co17a4a0da17d29c3fc6e241d
+- https://github.com/shiuandai/Hometown-Homepage/blob/main/styles.css
+- W3Schools.
+
+2) TODO: Search how to not break the layout if the words get tight due to page width, so the height would automatically resize. Aparentemente, a resposta é essa:
+https://stackoverflow.com/questions/3029422/how-to-auto-resize-an-image-while-maintaining-aspect-ratio
+
+3) TODO: How to make everything fit into the page and resize when needed. Does containers follow these rules? "display: flex" and something else involving dimensions? "object-fit"?
+*/
+
+body {
+/* General (global) properties */    
+    /* Meti as propriedades certas? OU USO OVERFLOW: AUTO? */
+    background-color: #573839;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    line-height: 45px; /* É o jeito certo de centralizar o texto dentro do container? */    
+}
+
+.h-section {
+/* Hero Section settings */    
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("https://blog.japanwondertravel.com/wp-content/uploads/2021/03/manuel-cosentino-d92I1Of2ofQ-unsplash-scaled.jpg");
+    background-size: cover;
+    background-position: center; /* To always center the image. */
+    /* Se você "settar" (em pxs) WIDTH e HEIGHT para a imagem da página, ela não vai mais redimensionar automaticamente. Você dar tamanhos, é definir limites. */
+    padding: 10%;
+    /* For the textbar mainly. But it is set on all Hero Section. */
+}
+
+#h-title {
+/* Main Title properties */
+    border: 1px solid #9D060B;
+    border-radius: 10px;
+    padding: 0px 10px;
+    background-color: #E51816;
+/* Se você "settar" WIDTH e HEIGHT para seu container, ele não vai mais redimensionar automaticamente. */
+    margin-bottom: 80px;
+    text-shadow: 2px 2px #393646;
+    box-shadow: 1px 1px 15px black;
+}
+
+#h-subtitle {
+/* Subtitle properties */
+    border: 1px solid #9D060B;
+    border-radius: 10px;
+    padding: 5px 2px;
+    background-color: #E51816;
+    text-shadow: 2px 2px #393646;
+    font-size: 18px;
+    line-height: 18.44px;
+    box-shadow: 1px 1px 10px black;
+}
+
+.a-section {
+ /* Activities Section settings */
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px;
+    background-color: #161b1f;
+    color: white;
+    text-shadow: 2px 2px #393646;
+}
+
+/* Activities Section elements */
+
+/* Anteriormente, eu não estava conseguindo por espaço entre as imagens, percebi que eu precisava "wrappear" elas em um DIV. */
+#a-container {
+    display: flex;
+}
+
+.a-spot img {
+    /* Here I've used a new method, without the need of an id or class to call out the images. The same was applied to the texts, bellow. */
+    border-radius: 50%;
+    height: 120px;;
+    width: 120px;
+    object-fit: cover;
+    border: 1px solid #393646;
+}
+
+.a-section h4 {
+    font-size: 18px;
+    line-height: 18.44px;
+}
+
+.a-section p {
+    font-size: 13px;
+    line-height: 18.44px;
+    padding: 0px 8px;
+}
+
+.g-section {
+/* Guide Section properties */
+/* I didn't apply text-shadow here because it looked weird ;-; 
+   Honestly, I could do the site pretty much w/ it but I wanted to put everything I've learned. */
+    background-color: #eceaeb;
+    line-height: 18.44px;
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    border-radius: 10px;
+    border-bottom: 6px solid #9D060B;
+}
+
+/* Card's elements */
+.g-section p{
+    width: 200px;
+}
+
+.g-section img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.ads {
+/* STRETCH GOAL: ADD SECTION -> ADS SECTION */
+    display: flex;
+}
+
+.ads img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.ads img:hover {
+/* STRETCH GOAL: USE HOVER -> ADS CONT. 
+ref.: https://www.tutorialspoint.com/how-to-change-image-on-hover-with-css
+*/ 
+   content: url("https://i.etsystatic.com/35325703/r/il/127203/4249523063/il_794xN.4249523063_p3d1.jpg");
+} 
+
+
